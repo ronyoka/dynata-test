@@ -14,6 +14,7 @@ import lombok.ToString;
 @ToString
 public class Participation {
     private int id;
+    private int memberId;
     private int surveyId;
     private Status status;
     private int length;
@@ -31,6 +32,6 @@ public class Participation {
     }
 
     private static boolean isStatusFilteredOrCompleted(Status s) {
-        return s.getName().equalsIgnoreCase("filtered") || s.getName().equalsIgnoreCase("completed");
+        return s.equals(Status.FILTERED) || s.equals(Status.COMPLETED);
     }
 }
