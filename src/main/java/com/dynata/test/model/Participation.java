@@ -3,6 +3,7 @@ package com.dynata.test.model;
 import java.util.Optional;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -11,9 +12,9 @@ import lombok.ToString;
  */
 @Getter
 @AllArgsConstructor
+@Builder
 @ToString
 public class Participation {
-    private int id;
     private int memberId;
     private int surveyId;
     private Status status;

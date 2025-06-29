@@ -1,6 +1,7 @@
 package com.dynata.test.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
+@Builder
 public class Status {
     public static final Status NOT_ASKED = new Status(1, "Not asked");
     public static final Status REJECTED = new Status(2, "Rejected");
