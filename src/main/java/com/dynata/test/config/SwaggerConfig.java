@@ -7,6 +7,11 @@ import io.swagger.v3.oas.models.info.License;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration class for setting up Swagger/OpenAPI documentation for the application.
+ * It defines the API documentation details such as the title, description, version,
+ * contact information, and applicable license.
+ */
 @Configuration
 public class SwaggerConfig {
 
@@ -23,6 +28,6 @@ public class SwaggerConfig {
                                                .url("https://www.example.com"))
                               .license(new License()
                                                .name("Apache 2.0")
-                                               .url("http://www.apache.org/licenses/LICENSE-2.0.html")));
+                                               .url("https://www.apache.org/licenses/LICENSE-2.0.html")));
     }
 }

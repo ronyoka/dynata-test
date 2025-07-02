@@ -1,7 +1,7 @@
 package com.dynata.test.mapper;
 
-import static com.dynata.test.mapper.CsvColumnConstants.LENGTH;
-import static com.dynata.test.mapper.CsvColumnConstants.STATUS;
+import static com.dynata.test.mapper.CsvColumnConstants.HEADER_LENGTH;
+import static com.dynata.test.mapper.CsvColumnConstants.HEADER_STATUS;
 import static com.dynata.test.mapper.CsvColumnConstants.STATUS_EMPTY;
 import static com.dynata.test.mapper.CsvColumnConstants.STATUS_NOT_FOUND;
 
@@ -51,10 +51,10 @@ public class ParticipationMapper implements BaseCsvRecordMapper {
     }
 
     private Integer getStatusId(CSVRecord record) {
-        return getCsvColumnAsInteger(record, STATUS).orElseThrow(() -> new IllegalStateException(STATUS_EMPTY));
+        return getCsvColumnAsInteger(record, HEADER_STATUS).orElseThrow(() -> new IllegalStateException(STATUS_EMPTY));
     }
 
     private int toLength(CSVRecord record) {
-        return getCsvColumnAsInteger(record, LENGTH).orElse(0);
+        return getCsvColumnAsInteger(record, HEADER_LENGTH).orElse(0);
     }
 }

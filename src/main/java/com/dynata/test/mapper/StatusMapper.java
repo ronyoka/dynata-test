@@ -1,7 +1,7 @@
 package com.dynata.test.mapper;
 
-import static com.dynata.test.mapper.CsvColumnConstants.NAME;
-import static com.dynata.test.mapper.CsvColumnConstants.STATUS_ID;
+import static com.dynata.test.mapper.CsvColumnConstants.HEADER_NAME;
+import static com.dynata.test.mapper.CsvColumnConstants.HEADER_STATUS_ID;
 import static com.dynata.test.mapper.CsvColumnConstants.STATUS_ID_EMPTY;
 import static com.dynata.test.mapper.CsvColumnConstants.STATUS_NAME_EMPTY;
 
@@ -32,7 +32,7 @@ public interface StatusMapper extends BaseCsvRecordMapper {
 
     @Named("toStatusId")
     default int toStatusId(CSVRecord record) {
-        return Optional.ofNullable(record.get(STATUS_ID))
+        return Optional.ofNullable(record.get(HEADER_STATUS_ID))
                        .filter(StringUtils::isNotBlank)
                        .map(String::trim)
                        .map(Integer::parseInt)
@@ -41,7 +41,7 @@ public interface StatusMapper extends BaseCsvRecordMapper {
 
     @Named("toName")
     default String toName(CSVRecord record) {
-        return Optional.ofNullable(record.get(NAME))
+        return Optional.ofNullable(record.get(HEADER_NAME))
                        .filter(StringUtils::isNotBlank)
                        .map(String::trim)
                        .orElseThrow(() -> new IllegalStateException(STATUS_NAME_EMPTY));
